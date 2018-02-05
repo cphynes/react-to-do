@@ -19,10 +19,9 @@ class App extends Component {
   }
 
   deleteTodo(toDoIndex) {
-    var deletedItems = this.state.todos.filter(function (todo) {
-      return (todo.toDoIndex !== toDoIndex);
+    var deletedItems = this.state.todos.filter(function (val,index) {
+      return (index !== toDoIndex);
     });
-
     this.setState({
       todos: deletedItems
     });
